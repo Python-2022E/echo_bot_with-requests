@@ -13,8 +13,13 @@ def send_message(chat_id, text):
         'chat_id':chat_id,
         'text':text
     }
-    r = requests.post(f'https://api.telegram.org/bot{TOKEN}/sendMessage',data=data)
-    print(r.status_code)
+    requests.post(f'https://api.telegram.org/bot{TOKEN}/sendMessage',data=data)
 
-chat_id = 5575549228
-send_message(chat_id,'Hi')
+def get_last_updates(updates):
+
+    last_updates = updates['result'][-1]
+
+    chat_id = last_updates['message']['chat']['id']
+    text = last_updates['message']['text']
+    return chat_id, text
+
