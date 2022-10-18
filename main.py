@@ -1,5 +1,3 @@
-from cgi import test
-from re import A
 import requests
 
 TOKEN='5559122728:AAHOu1gL4pA1riJPMCmICNTKI57P5xnHsyA'
