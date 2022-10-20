@@ -6,7 +6,9 @@ chat_id = 5575549228
 
 data = {
             'chat_id':chat_id,
-            'photo':url
+            'photo':url,
+            'caption':f"<b>CAT</b>",
+            'parse_mode':'HTML'
         }
     
 r = requests.post(f'https://api.telegram.org/bot{TOKEN}/sendPhoto',data=data)
