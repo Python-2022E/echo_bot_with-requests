@@ -17,8 +17,8 @@ def get_last_update(updates):
 def send_message(TOKEN,chat_id, text):
     data = {
             'chat_id':chat_id,
-            'text':f"[{text}](https://t.me/codeschooluz)",
-            'parse_mode':'MarkdownV2'
+            'text':f'<a href="http://www.google.com/">{text}</a>',
+            'parse_mode':'HTML'
         }
     
     r = requests.post(f'https://api.telegram.org/bot{TOKEN}/sendMessage',data=data)
