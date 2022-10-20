@@ -4,17 +4,18 @@ TOKEN='5559122728:AAHOu1gL4pA1riJPMCmICNTKI57P5xnHsyA'
 url = 'https://cdn2.thecatapi.com/images/MTY4Njk5Ng.jpg'
 file_id = 'AgACAgIAAxkBAAIBSmNRG6awCnoUmYEEEWWULqhdCV2UAALawjEbZVmJSgRD6s4szbUcAQADAgADcwADKgQ'
 chat_id = 5575549228
-
-data = {
+f = open('cat.jpg', 'rb')
+img = f.read()
+payload = {
             'chat_id':chat_id,
-            'photo':file_id,
             'caption':f"<b>CAT</b>",
             'parse_mode':'HTML'
         }
+img = {'photo':img}
     
-r = requests.post(f'https://api.telegram.org/bot{TOKEN}/sendPhoto',data=data)
+r = requests.post(f'https://api.telegram.org/bot{TOKEN}/sendPhoto',params=payload, files=img)
 
-
+print(r.status_code)
 # def get_updates(TOKEN):
 #     updates = requests.get(f'https://api.telegram.org/bot{TOKEN}/getUpdates')
 #     updates = updates.json()
