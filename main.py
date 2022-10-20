@@ -17,7 +17,7 @@ def get_last_update(updates):
 def send_message(TOKEN,chat_id, text):
     data = {
             'chat_id':chat_id,
-            'text':f"||{text}||",
+            'text':f"[{text}](https://t.me/codeschooluz)",
             'parse_mode':'MarkdownV2'
         }
     
